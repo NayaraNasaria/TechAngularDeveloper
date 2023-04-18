@@ -1,0 +1,32 @@
+<p [ngClass]="estilo">Habilitado!</p>
+<button (click)="trocar()">Trocar cor</button>
+<hr />
+<h1 [ngStyle]="{ background: corFundo, color: corFonte }">CURSO ANGULAR</h1>
+<hr />
+
+<ng-content select="h2"></ng-content>
+
+<hr />
+
+<h1>Lista de Compras</h1>
+<p>Adicione um item</p>
+<input type="text" [(ngModel)]="item" />
+<button (click)="adicionarLista()">ADICIONAR</button>
+<p>{{ item }}</p>
+
+<ul>
+  <li *ngFor="let elemento of lista">{{ elemento }}</li>
+</ul>
+
+<hr />
+
+<ng-template [ngIf]="true">
+  <a href="#">Finalizar Compra</a>
+</ng-template>
+<br />
+<ng-template [ngIf]="true">
+  <a href="#">Adicionar ao Carrinho</a>
+</ng-template>
+<hr />
+
+<ng-content select="p"></ng-content>
